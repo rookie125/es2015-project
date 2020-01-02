@@ -5,7 +5,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { description } = require('../package.json');
-const { version } = require('react/package.json');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const { findSync } = require('./utils');
@@ -70,7 +69,6 @@ module.exports = ({ mode }) => ({
 	plugins: [
 		...views.map(({ name, template }) => new HtmlWebpackPlugin({
 			env: mode,
-			reactVersion: version,
 			filename: `${name}.html`,
 			template: template,
 			inject: true,
